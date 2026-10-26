@@ -25,10 +25,20 @@ public class LamdaExpressionDemo {
 //lm.sum(10);
 
 
-        LamdaExpression subb= (a, b) -> a-b; ;
+        LamdaExpression subb= (a, b) -> {
+
+            if(b<a)
+            {
+                throw new RuntimeException("ERROR MESSAGE");
+            } else {
+
+                return a - b;
+            }
+
+        };
 
 
-       System.out.println("RESULT OF THE SUBSTRACTION IS : "+subb.subtract(50,9)) ;
+       System.out.println("RESULT OF THE SUBSTRACTION IS : "+subb.subtract(50,99)) ;
 
 
 
