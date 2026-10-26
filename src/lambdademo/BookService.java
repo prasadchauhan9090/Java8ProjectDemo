@@ -8,14 +8,15 @@ public class BookService {
 
 
     public List<Book> getBooksinSort() {
+        List<Book> book = new BookDAO().getBooks();
+        Collections.sort(book, (o1, o2) -> o2.getName().compareTo(o1.getName()));
 
-       List<Book> book =  new BookDAO().getBooks();
+        return book;
 
-       book.sort(Comparator.comparing(Book::getName));
-
-       Collections.sort(book, new MyComparator());
-       return book;
-    }
+}
+//        @Override
+//        public int compare(Book o1, Book o2) {
+//            return o1.getName().compareTo(o2.getName());
 
     public static void main(String args[])
     {
@@ -29,11 +30,12 @@ public class BookService {
     }
 }
 
-class MyComparator implements Comparator<Book> {
 
-
-    @Override
-    public int compare(Book o1, Book o2) {
-        return o1.getName().compareTo(o2.getName());
-    }
-}
+//class MyComparator implements Comparator<Book> {
+//
+//
+//    @Override
+//    public int compare(Book o1, Book o2) {
+//        return o1.getName().compareTo(o2.getName());
+//    }
+//}
