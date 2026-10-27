@@ -10,18 +10,31 @@ public class TaxService {
         List<Employee> employees = DataBase.getEmployees();
 
 
-        if (input.equalsIgnoreCase("taxpayer")) {
-            return DataBase.getEmployees()
+//        if (input.equalsIgnoreCase("taxpayer")) {
+//            return DataBase.getEmployees()
+//                    .stream()
+//                    .filter(emp -> emp.getSalary() > 500000)
+//                    .collect(Collectors.toList());
+//        } else {
+//            return DataBase.getEmployees()
+//                    .stream()
+//                    .filter(emp -> emp.getSalary() < 500000)
+//                    .collect(Collectors.toList());
+//        }
+
+        //using terninory operator
+       return (input.equalsIgnoreCase("taxpayer"))
+                ? DataBase.getEmployees()
                     .stream()
                     .filter(emp -> emp.getSalary() > 500000)
-                    .collect(Collectors.toList());
-        } else {
-            return DataBase.getEmployees()
+                    .collect(Collectors.toList())
+
+                : DataBase.getEmployees()
                     .stream()
                     .filter(emp -> emp.getSalary() < 500000)
                     .collect(Collectors.toList());
         }
-    }
+
 
     public static void main(String args[])
     {
