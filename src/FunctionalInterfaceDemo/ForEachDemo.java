@@ -1,20 +1,26 @@
 package FunctionalInterfaceDemo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ForEachDemo {
 
     public static void main(String args[]) {
 
-//        Map<Integer, String> list = new HashMap<>();
-//        list.put(1, "prasad");
-//        list.put(2, "chauhan");
-//        list.put(3, "welcome");
-//        list.put(4, "shanvi");
-//        list.put(5, "mounika");
-//        list.put(6, "haidi");
-//        list.put(7, "BABY");
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "prasad");
+        map.put(2, "chauhan");
+        map.put(3, "welcome");
+        map.put(4, "shanvi");
+        map.put(5, "mounika");
+        map.put(6, "haidi");
+        map.put(7, "BABY");
+
+        map.entrySet().stream().filter(k->k.getKey()%2==0).forEach(obj->System.out.println(obj));
+
+
 
         List<String> list = new ArrayList<>();
         list.add("prasad");
@@ -50,10 +56,10 @@ public class ForEachDemo {
         
         
 
-//        list.forEach((key, value) -> System.out.println(key + " : " + value));
+//        map.forEach((key, value) -> System.out.println(key + " : " + value));
 //
 //        System.out.println("===================");
 //
-//        list.entrySet().stream().forEach(t->System.out.println(t.getKey() + " : " + t.getValue()));
+//        map.entrySet().stream().forEach(t->System.out.println(t.getKey() + " : " + t.getValue()));
     }
 }
