@@ -11,13 +11,13 @@ public class ConsumerDemo {
     {
 
 
-       Consumer<Integer> cm = (t)->{System.out.println("Printing : "+ t);};
+      // Consumer<Integer> cm = (t)->{System.out.println("Printing : "+ t);};
 
-       cm.accept(15);
+       //cm.accept(15);
 
        List<Integer> list = Arrays.asList(1,2,3,5,6,7,8,9);
 
-       list.forEach(cm);
+       list.stream().forEach(t->System.out.println("Printing : "+ t));
 
     }
 
