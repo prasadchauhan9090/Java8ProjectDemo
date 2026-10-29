@@ -19,10 +19,16 @@ public class SortedMap {
         Collections.sort(entries, (o1,  o2) -> o1.getKey().compareTo(o2.getKey()));
 
 
-        for(Map.Entry<String,Integer> entry: entries)
-        {
-            System.out.println(entry.getKey() + " "+ entry.getValue());
-        }
+//        for(Map.Entry<String,Integer> entry: entries)
+//        {
+//            System.out.println(entry.getKey() + " "+ entry.getValue());
+//        }
+
+        map.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+
+        System.out.println("==================================================================");
+
+        map.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
 
     }
 }
