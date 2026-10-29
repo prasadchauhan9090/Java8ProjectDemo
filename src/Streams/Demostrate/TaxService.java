@@ -38,7 +38,7 @@ public class TaxService {
 
     public static void main(String args[])
     {
-        System.out.println(evaluteTaxUsers("not taxpayer"));
+        System.out.println(evaluteTaxUsers("taxpayer"));
     }
 
 }
